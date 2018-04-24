@@ -13,6 +13,8 @@ class User(models.Model):
 class Project(models.Model):
     title = models.CharField(max_length=128)
 
+    user = models.ForeignKey(User, related_name= 'projects_of', on_delete=True)
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
