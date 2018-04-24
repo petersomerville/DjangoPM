@@ -1,12 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>This is the proj_manager index file</h1>
-</body>
-</html>
+{% extends 'proj_manager/base.html' %} 
+
+{% block body %}
+
+<div class="container mt-3">
+    <h1>Projects</h1>
+    <form action="#" method="POST">
+        <div class="form-group row p-3 justify-content-center">
+            <input type="text" class="col-8 mr-2" name="html_title" placeholder="Title of your new project">
+            <button class="btn btn-success">Create</button>
+        </div>
+    </form>
+    <hr> 
+    <div class="col-12">
+        <div class="row font-weight-bold">
+            <div class="col-1"></div>
+            <div class="col-6">Project Title</div>
+            <div class="col-3">Day Created</div>
+        </div>
+        <hr> 
+
+        <div class="row align-middle">
+            <a href="#" class="btn btn-primary">Tasks</a>
+            <div class="col-6 align-middle">{{project.title}}</div>
+            <div class="col-3 align-middle">{{project.created_at}}</div>
+            <a href="#" class="btn mr-1 btn-warning">Edit</a>
+            <a href="#" class="btn btn-danger">Delete</a>
+        </div>
+        <hr> 
+        
+    </div>
+</div>
+{% endblock %}

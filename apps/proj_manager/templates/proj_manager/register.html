@@ -1,0 +1,47 @@
+{% extends 'travel_app/base.html' %}
+
+{% block body %}
+
+<div class="jumbotron bgregister">
+        <h1 class="display-4 text-center">Create an account and see the projects...</h1>
+        <div class="container">
+            <div class="col-md-6 offset-3 p-2 dancemonkey">
+                <form action="{% url 'travel_app:register' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="row p-2">
+                        <div class="col">Email address</div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col">
+                            <input type="text" class="form-control" name="html_email" placeholder="Enter email">
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col">Password</div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col">
+                            <input type="text" class="form-control" name="html_password" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col">Confirm Password</div>
+                    </div>
+                    <div class="row p-2">
+                        <div class="col">
+                            <input type="text" class="form-control" name="html_confirm" placeholder="Password">
+                        </div>
+                    </div>
+                    
+                    <div class="row p-2">
+                        <div class="col">
+                            <button class="btn btn-primary" role="submit">Register</button>
+                        </div>
+                    </div>
+                    {% include 'travel_app/errors.html' %}
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
